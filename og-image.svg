@@ -1,0 +1,70 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090f"/>
+      <stop offset="100%" style="stop-color:#0e0e1a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6e5cff"/>
+      <stop offset="50%" style="stop-color:#0984e3"/>
+      <stop offset="100%" style="stop-color:#00d4a1"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="35%" cy="40%" r="40%">
+      <stop offset="0%" style="stop-color:#6e5cff;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#6e5cff;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="70%" cy="65%" r="35%">
+      <stop offset="0%" style="stop-color:#00d4a1;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#00d4a1;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Glow orbs -->
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Subtle border -->
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Top label -->
+  <text x="600" y="200" text-anchor="middle" fill="#7a7a92" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5">PRODUCT VISION</text>
+
+  <!-- Nexa title -->
+  <text x="600" y="310" text-anchor="middle" fill="url(#accent)" font-family="Georgia, serif" font-size="120" font-weight="400" letter-spacing="-3">Nexa</text>
+
+  <!-- Tagline -->
+  <text x="600" y="380" text-anchor="middle" fill="#e8e8f0" font-family="Georgia, serif" font-size="32" font-weight="300" font-style="italic">Your life, handled.</text>
+
+  <!-- Channel pills -->
+  <g transform="translate(600, 440)">
+    <!-- Email -->
+    <rect x="-250" y="-14" width="80" height="28" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <circle cx="-230" cy="0" r="3" fill="#00d4a1"/>
+    <text x="-218" y="5" fill="#7a7a92" font-family="Helvetica Neue, Arial, sans-serif" font-size="12">Email</text>
+    <!-- iMessage -->
+    <rect x="-150" y="-14" width="96" height="28" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <circle cx="-130" cy="0" r="3" fill="#0984e3"/>
+    <text x="-118" y="5" fill="#7a7a92" font-family="Helvetica Neue, Arial, sans-serif" font-size="12">iMessage</text>
+    <!-- Voice -->
+    <rect x="-34" y="-14" width="78" height="28" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <circle cx="-14" cy="0" r="3" fill="#fdcb6e"/>
+    <text x="-2" y="5" fill="#7a7a92" font-family="Helvetica Neue, Arial, sans-serif" font-size="12">Voice</text>
+    <!-- Calendar -->
+    <rect x="62" y="-14" width="92" height="28" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <circle cx="82" cy="0" r="3" fill="#9b8fff"/>
+    <text x="94" y="5" fill="#7a7a92" font-family="Helvetica Neue, Arial, sans-serif" font-size="12">Calendar</text>
+    <!-- Meetings -->
+    <rect x="172" y="-14" width="92" height="28" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <circle cx="192" cy="0" r="3" fill="#ff6b6b"/>
+    <text x="204" y="5" fill="#7a7a92" font-family="Helvetica Neue, Arial, sans-serif" font-size="12">Meetings</text>
+  </g>
+
+  <!-- Bottom domain -->
+  <text x="600" y="560" text-anchor="middle" fill="#4a4a60" font-family="Helvetica Neue, Arial, sans-serif" font-size="15">irokolabs.ai</text>
+
+  <!-- Subtle top line accent -->
+  <rect x="0" y="0" width="1200" height="2" fill="url(#accent)" opacity="0.6"/>
+</svg>

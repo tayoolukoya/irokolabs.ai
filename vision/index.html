@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nexa — Product Vision</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300;1,6..72,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#faf9f6;--bg2:#f0eeea;--text:#1a1a1a;--dim:#6b6b6b;--accent:#4a3aff;--accent2:#7b6bff;
+--green:#0a8f6a;--red:#c44;--warm:#f5e6d0;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* LAYOUT */
+.container{max-width:720px;margin:0 auto;padding:0 28px}
+.wide{max-width:960px;margin:0 auto;padding:0 28px}
+section{padding:80px 0}
+section.hero{padding:140px 0 100px}
+
+/* TYPOGRAPHY */
+h1{font-family:'Newsreader',serif;font-size:56px;line-height:1.12;font-weight:300;letter-spacing:-1.5px;margin-bottom:24px}
+h2{font-family:'Newsreader',serif;font-size:40px;line-height:1.2;font-weight:300;letter-spacing:-1px;margin-bottom:20px}
+h3{font-family:'Newsreader',serif;font-size:28px;line-height:1.3;font-weight:400;margin-bottom:16px}
+p{margin-bottom:20px;color:var(--dim)}
+p.lead{font-size:22px;line-height:1.6;color:var(--text)}
+strong{color:var(--text);font-weight:600}
+em{font-style:italic}
+
+/* LABEL */
+.label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--accent);margin-bottom:20px;display:block}
+
+/* ACCENT TEXT */
+.accent{color:var(--accent)}
+.green{color:var(--green)}
+
+/* QUOTE */
+.quote{border-left:3px solid var(--accent);padding:24px 32px;margin:40px 0;background:rgba(74,58,255,.03);border-radius:0 12px 12px 0}
+.quote p{font-family:'Newsreader',serif;font-size:26px;line-height:1.5;color:var(--text);font-style:italic;margin-bottom:8px}
+.quote .attr{font-family:'Instrument Sans',sans-serif;font-size:14px;color:var(--dim);font-style:normal}
+
+/* DIVIDER */
+.divider{width:60px;height:2px;background:var(--accent);margin:60px 0;opacity:.4}
+
+/* STAT ROW */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:40px 0}
+.stat{text-align:center;padding:32px 16px;background:white;border-radius:16px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 20px rgba(0,0,0,.03)}
+.stat .num{font-family:'Newsreader',serif;font-size:48px;font-weight:600;color:var(--accent);line-height:1}
+.stat .desc{font-size:14px;color:var(--dim);margin-top:8px;line-height:1.4}
+
+/* COMPARISON */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:40px 0}
+.compare-card{padding:32px;border-radius:16px}
+.compare-card.old{background:white;border:1px solid rgba(0,0,0,.06)}
+.compare-card.new{background:linear-gradient(135deg,rgba(74,58,255,.06),rgba(10,143,106,.04));border:1px solid rgba(74,58,255,.12)}
+.compare-card .tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.compare-card h3{font-size:20px;margin-bottom:12px}
+.compare-card p{font-size:15px;line-height:1.6}
+
+/* FLOW VISUAL */
+.flow{display:flex;align-items:center;justify-content:center;gap:0;margin:32px 0;flex-wrap:wrap}
+.flow-node{padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;white-space:nowrap}
+.flow-arrow{font-size:16px;color:var(--dim);padding:0 8px}
+.flow .human{background:rgba(204,68,68,.08);border:1px solid rgba(204,68,68,.2);color:var(--red)}
+.flow .ai{background:rgba(74,58,255,.08);border:1px solid rgba(74,58,255,.2);color:var(--accent)}
+.flow .tool{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08);color:var(--dim)}
+.flow .nexa{background:rgba(10,143,106,.08);border:1px solid rgba(10,143,106,.2);color:var(--green)}
+
+/* FEATURE GRID */
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:40px 0}
+.feature{padding:32px;background:white;border-radius:16px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 20px rgba(0,0,0,.03)}
+.feature .icon{font-size:32px;margin-bottom:16px}
+.feature h3{font-size:20px;margin-bottom:8px}
+.feature p{font-size:15px;line-height:1.6;margin-bottom:0}
+
+/* AGENT VS TOOL */
+.agent-compare{margin:40px 0;background:white;border-radius:16px;border:1px solid rgba(0,0,0,.06);overflow:hidden}
+.agent-row{display:grid;grid-template-columns:80px 1fr 1fr;border-bottom:1px solid rgba(0,0,0,.04)}
+.agent-row:last-child{border-bottom:none}
+.agent-row.header{background:var(--accent);color:white}
+.agent-row.header div{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.agent-row div{padding:16px 20px;font-size:15px;display:flex;align-items:center}
+.agent-row div:first-child{font-size:13px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;justify-content:center}
+.agent-row.header div:first-child{color:white}
+
+/* HERO DARK */
+.hero-dark{background:#0a0a12;color:#eaeaf2;padding:120px 0}
+.hero-dark h1{color:#eaeaf2}
+.hero-dark p{color:#8888a8}
+.hero-dark .label{color:var(--accent2)}
+
+/* CLOSING */
+.closing{text-align:center;padding:120px 0;background:linear-gradient(180deg,var(--bg) 0%,rgba(74,58,255,.04) 100%)}
+.closing h1{font-size:72px;letter-spacing:-2px}
+.closing p.tagline{font-family:'Newsreader',serif;font-size:24px;color:var(--dim);font-style:italic}
+
+/* FULL-WIDTH BAND */
+.band{padding:80px 0;background:var(--bg2)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* NAV */
+.top-nav{position:fixed;top:0;left:0;right:0;padding:20px 32px;z-index:100;display:flex;justify-content:space-between;align-items:center;background:rgba(250,249,246,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.04)}
+.top-nav .logo{font-family:'Newsreader',serif;font-size:22px;font-weight:600;color:var(--accent)}
+.top-nav .sub{font-size:12px;color:var(--dim);letter-spacing:2px;text-transform:uppercase}
+
+@media(max-width:768px){
+h1{font-size:36px}h2{font-size:28px}
+.stat-row,.compare,.feature-grid{grid-template-columns:1fr}
+.agent-row{grid-template-columns:60px 1fr 1fr}
+section{padding:60px 0}
+.top-nav{padding:14px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<div class="logo">Nexa</div>
+<div class="sub">Product Vision · 2026</div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+<div class="container">
+<span class="label reveal">The AI Revolution</span>
+<h1 class="reveal">The AI Revolution Is Here —<br>But Not Everyone Is Invited</h1>
+<p class="lead reveal">Artificial intelligence is one of the most transformative technological shifts of our lifetime. As an engineer, I feel incredibly fortunate to be building during this moment.</p>
+<p class="lead reveal">But the reality of this revolution is more complicated.</p>
+</div>
+</section>
+
+<!-- ═══ THE GAP ═══ -->
+<section class="band">
+<div class="wide">
+<div class="stat-row reveal">
+<div class="stat">
+<div class="num">7–10%</div>
+<div class="desc">of people are truly proficient<br>with AI tools</div>
+</div>
+<div class="stat">
+<div class="num">40–60%</div>
+<div class="desc">have tried AI at least once</div>
+</div>
+<div class="stat">
+<div class="num">Vast majority</div>
+<div class="desc">still don't know how to<br>use it effectively</div>
+</div>
+</div>
+</div>
+<div class="container">
+<p class="reveal" style="text-align:center;margin-top:20px">And the gap is even wider in communities that already face barriers to technical access.</p>
+</div>
+</section>
+
+<!-- ═══ PERSONAL STORY ═══ -->
+<section>
+<div class="container">
+<span class="label reveal">What I See Firsthand</span>
+<p class="lead reveal">People in my family — lawyers, small business owners, friends — regularly ask me the same question: <strong>"Is AI really as big as they say it is?"</strong></p>
+<div class="quote reveal">
+<p>"I'm glad I'm close to retiring… I don't see how I can compete in this new workforce."</p>
+<div class="attr">— My uncle, a lawyer nearing retirement</div>
+</div>
+<p class="reveal">That moment made something very clear. The AI revolution is happening — but it doesn't seem interested in carrying everyone along.</p>
+</div>
+</section>
+
+<!-- ═══ BUILDER'S DILEMMA ═══ -->
+<section class="band">
+<div class="container">
+<span class="label reveal">The Builder's Dilemma</span>
+<h2 class="reveal">What kind of world am I helping create?</h2>
+<p class="lead reveal">A world where only technically sophisticated people benefit?<br>Or a world where everyone — including the people I care about most — can participate?</p>
+<div class="divider reveal"></div>
+<p class="reveal">Because the truth is: if my mom — who can barely use Gmail — has to learn prompt engineering, connect APIs, and manage AI workflows just to get value… <strong>then we built the wrong thing.</strong></p>
+<p class="reveal">Most AI products today assume the user will adapt to the machine. But historically, the technologies that truly change the world do the opposite. <strong>They adapt to humans.</strong></p>
+</div>
+</section>
+
+<!-- ═══ WRONG INTERFACE ═══ -->
+<section>
+<div class="container">
+<span class="label reveal">The Problem With Today's AI</span>
+<h2 class="reveal">Most AI Builders Are Designing<br>the Wrong Interface</h2>
+<p class="reveal">Today's AI tools focus on helping humans talk to AI. Chat interfaces. Prompt boxes. Workflow builders. But this is backwards.</p>
+<p class="lead reveal"><strong class="accent">The future isn't humans learning to operate AI systems.<br>The future is AI acting on behalf of humans.</strong></p>
+</div>
+<div class="wide">
+<div class="compare reveal">
+<div class="compare-card old">
+<div class="tag" style="color:var(--red)">What everyone is building</div>
+<h3>Human prompts AI</h3>
+<div class="flow" style="justify-content:flex-start;margin:16px 0">
+<span class="flow-node tool">SaaS</span>
+<span class="flow-arrow">→</span>
+<span class="flow-node human">Human</span>
+<span class="flow-arrow">→</span>
+<span class="flow-node ai">AI</span>
+<span class="flow-arrow">→</span>
+<span class="flow-node human">Human</span>
+<span class="flow-arrow">→</span>
+<span class="flow-node human">Execute</span>
+</div>
+<p>You prompt. AI generates. You copy, paste, edit, send. A smarter typewriter — you still do the work.</p>
+</div>
+<div class="compare-card new">
+<div class="tag" style="color:var(--green)">What Nexa is building</div>
+<h3>AI represents humans</h3>
+<div class="flow" style="justify-content:flex-start;margin:16px 0">
+<span class="flow-node human">Intent</span>
+<span class="flow-arrow">→</span>
+<span class="flow-node nexa">Nexa</span>
+<span class="flow-arrow">→</span>
+<span class="flow-node nexa">Done</span>
+</div>
+<p>Nexa reads, decides, and acts. You see the results. Zero prompting. Full execution.</p>
+</div>
+</div>
+</div>
+<div class="container">
+<p class="reveal">Before the recent AI boom, the word <em>agent</em> meant something very simple: someone who acts on behalf of another person. Real estate agents represent you. Talent agents represent you. Lawyers represent you. You don't micromanage them. They understand your goals and act in your interest. <strong>That's the model AI should follow.</strong></p>
+</div>
+</section>
+
+<!-- ═══ WHAT IS NEXA ═══ -->
+<section class="hero-dark">
+<div class="container" style="text-align:center">
+<span class="label reveal">Introducing</span>
+<h1 class="reveal" style="font-size:80px;letter-spacing:-3px">Nexa</h1>
+<p class="reveal" style="font-size:22px;color:#8888a8;margin-top:8px">Your Personal AI Agent</p>
+<div class="divider reveal" style="margin:40px auto;background:var(--accent2)"></div>
+<p class="reveal" style="font-size:20px;color:#b0b0cc;max-width:600px;margin:0 auto">Nexa is not another AI tool. Nexa is your AI representative. Instead of requiring you to learn how to use AI, Nexa learns how to represent you.</p>
+</div>
+</section>
+
+<!-- ═══ WHAT NEXA FEELS LIKE ═══ -->
+<section>
+<div class="container">
+<span class="label reveal">What Nexa Feels Like</span>
+<h2 class="reveal">Four things in one</h2>
+</div>
+<div class="wide">
+<div class="feature-grid reveal">
+<div class="feature">
+<div class="icon">🧠</div>
+<h3>A Second Brain That Actually Works</h3>
+<p>Most productivity tools store information. Nexa remembers context. Instead of searching for an email from 2022, Nexa already knows. Every morning she gives you a brief: conversations that need follow-up, commitments you made, people waiting on you, tasks that matter today. You don't search. You just ask.</p>
+</div>
+<div class="feature">
+<div class="icon">🎛️</div>
+<h3>A Universal Remote for Your Life</h3>
+<p>Your digital life is fragmented — email, calendar, flights, notes, messaging. Nexa becomes the interface above all of them. You say "Find me a flight to London" and Nexa already knows your preferences, your schedule, your budget. She doesn't send you links. She handles the task.</p>
+</div>
+<div class="feature">
+<div class="icon">🛡️</div>
+<h3>A Digital Gatekeeper</h3>
+<p>Your attention is your most valuable resource. Nexa protects it. She filters emails, messages, and meeting requests. She can respond on your behalf: "Tayo is currently focused on a project and can't take new meetings this week." You don't manage your inbox. Nexa manages access to you.</p>
+</div>
+<div class="feature">
+<div class="icon">🧭</div>
+<h3>A Life Navigator</h3>
+<p>Like GPS for your life, Nexa continuously recalculates based on deadlines, commitments, conversations, and priorities. She surfaces only what matters most. Not a long to-do list. Just the next few things that move your life forward.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══ AGENT VS TOOL ═══ -->
+<section class="band">
+<div class="container">
+<span class="label reveal">The Key Shift</span>
+<h2 class="reveal">From Tool to Agent</h2>
+<p class="reveal">The difference isn't features. It's judgment.</p>
+</div>
+<div class="wide">
+<div class="agent-compare reveal">
+<div class="agent-row header">
+<div></div>
+<div>A Tool</div>
+<div>An Agent (Nexa)</div>
+</div>
+<div class="agent-row">
+<div>Email</div>
+<div style="color:var(--dim)">Tells you a recruiter emailed</div>
+<div style="color:var(--green);font-weight:500">"A recruiter emailed. I know you're busy, so I told them you weren't interested. Okay?"</div>
+</div>
+<div class="agent-row">
+<div>Meeting</div>
+<div style="color:var(--dim)">Shows you a calendar invite</div>
+<div style="color:var(--green);font-weight:500">"Sarah wants to meet. I found a slot Tuesday at 2pm that works for both of you. Confirmed?"</div>
+</div>
+<div class="agent-row">
+<div>Travel</div>
+<div style="color:var(--dim)">Gives you flight search links</div>
+<div style="color:var(--green);font-weight:500">"Your Lagos flight is delayed 45 min. Connection still looks good. I texted your driver the new arrival time."</div>
+</div>
+<div class="agent-row">
+<div>Research</div>
+<div style="color:var(--dim)">Returns search results</div>
+<div style="color:var(--green);font-weight:500">"Here's your research on Delaware C-Corps. Summary in your email, full report in Google Docs."</div>
+</div>
+</div>
+</div>
+<div class="container">
+<p class="reveal" style="margin-top:24px"><strong>Information vs. judgment.</strong> That shift is what makes Nexa feel like it does more. It's not reporting on your life. It's running it.</p>
+</div>
+</section>
+
+<!-- ═══ INVISIBLE ═══ -->
+<section>
+<div class="container">
+<span class="label reveal">Design Philosophy</span>
+<h2 class="reveal">The Invisible Assistant</h2>
+<p class="lead reveal">If Nexa is going to be more than a tool, she needs to be <strong>invisible.</strong></p>
+<p class="reveal">No bots joining your meetings. No robotic replies. No "my AI says…" moments. The people on the other side of a conversation should never know Nexa is involved — unless you want them to.</p>
+<p class="reveal">Auto-replies sound like you. Phone calls feel like a real assistant. The morning briefing is delivered quietly, not intrusively. <strong class="accent">Nexa is the assistant people feel but never see.</strong></p>
+</div>
+</section>
+
+<!-- ═══ THE REAL VISION ═══ -->
+<section class="band">
+<div class="container" style="text-align:center">
+<span class="label reveal">The Real Vision</span>
+<h2 class="reveal">Every person should have an intelligent<br>agent representing them.</h2>
+<p class="lead reveal" style="max-width:560px;margin:0 auto 20px">Not just executives. Not just engineers. <strong>Everyone.</strong></p>
+<p class="reveal" style="max-width:560px;margin:0 auto">Because the AI revolution shouldn't belong to the people who understand the technology best. It should belong to the people whose lives it can improve the most.</p>
+</div>
+</section>
+
+<!-- ═══ CLOSING ═══ -->
+<section class="closing">
+<div class="container">
+<h1><span class="accent">Nexa</span></h1>
+<p class="tagline" style="margin-top:12px">Your personal AI agent — a digital representative<br>that understands your life and acts on your behalf.</p>
+<div class="divider" style="margin:40px auto"></div>
+<p style="font-size:15px;color:var(--dim)">An Iroko Labs product · Built by Tayo Olukoya</p>
+<p style="font-size:14px;color:var(--dim)">Principal Software Engineer, SoFi · Staff Software Engineer, Twitter</p>
+<p style="font-size:15px;color:var(--dim)">tayo@irokolabs.ai</p>
+</div>
+</section>
+
+<script>
+const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
+</script>
+</body>
+</html>

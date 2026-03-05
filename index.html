@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nexa — Your Life, Handled</title>
+<meta name="description" content="Nexa is your personal AI agent. It handles your email, calendar, calls, and meetings — so you don't have to.">
+<meta property="og:title" content="Nexa — Your Life, Handled">
+<meta property="og:description" content="A personal AI agent that handles your email, calendar, calls, and meetings. No prompting. It just works.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://irokolabs.ai">
+<meta property="og:image" content="https://irokolabs.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nexa — Your Life, Handled">
+<meta name="twitter:description" content="A personal AI agent that handles your email, calendar, calls, and meetings. No prompting. It just works.">
+<meta name="twitter:image" content="https://irokolabs.ai/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#09090f;--bg2:#111118;--text:#e8e8f0;--dim:#7a7a92;--accent:#6e5cff;--accent2:#9b8fff;--green:#00d4a1;--border:rgba(255,255,255,.06)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* Grain overlay */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:9999}
+
+.container{max-width:800px;margin:0 auto;padding:0 28px}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;background:rgba(9,9,15,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+nav .logo{font-family:'Newsreader',serif;font-size:24px;font-weight:600;color:var(--accent2);letter-spacing:-.5px}
+nav .link{font-size:14px;color:var(--dim);transition:color .2s}
+nav .link:hover{color:var(--text);text-decoration:none}
+
+/* HERO */
+.hero{padding:180px 0 120px;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(110,92,255,.08) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-family:'Newsreader',serif;font-size:72px;font-weight:300;line-height:1.08;letter-spacing:-2.5px;max-width:700px;margin:0 auto 24px}
+.hero .sub{font-size:20px;color:var(--dim);max-width:540px;margin:0 auto 48px;line-height:1.6}
+.hero .accent{color:var(--accent2)}
+
+/* CTA */
+.cta-group{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-size:16px;font-weight:600;font-family:inherit;cursor:pointer;transition:all .25s;border:none}
+.btn-primary{background:var(--accent);color:white}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 8px 30px rgba(110,92,255,.3);text-decoration:none}
+.btn-ghost{background:transparent;color:var(--dim);border:1px solid var(--border);padding:13px 28px}
+.btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,.15);text-decoration:none}
+
+/* PILL ROW */
+.pills{display:flex;gap:10px;justify-content:center;margin-top:48px;flex-wrap:wrap}
+.pill{background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-size:13px;color:var(--dim);display:flex;align-items:center;gap:8px}
+.pill .dot{width:6px;height:6px;border-radius:50%}
+
+/* FEATURES */
+.features{padding:100px 0;border-top:1px solid var(--border)}
+.features .label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--accent2);margin-bottom:16px;text-align:center}
+.features h2{font-family:'Newsreader',serif;font-size:44px;font-weight:300;line-height:1.15;letter-spacing:-1px;text-align:center;margin-bottom:48px}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto}
+.feature{padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;transition:border-color .3s}
+.feature:hover{border-color:rgba(255,255,255,.1)}
+.feature .icon{font-size:24px;margin-bottom:14px}
+.feature h3{font-family:'Newsreader',serif;font-size:20px;font-weight:400;margin-bottom:8px;color:var(--text)}
+.feature p{font-size:15px;line-height:1.6;color:var(--dim);margin-bottom:0}
+
+/* SHIFT SECTION */
+.shift{padding:100px 0;border-top:1px solid var(--border)}
+.shift .container{text-align:center}
+.shift h2{font-family:'Newsreader',serif;font-size:40px;font-weight:300;letter-spacing:-1px;margin-bottom:16px}
+.shift-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:40px auto 0;max-width:700px}
+.shift-card{padding:28px;border-radius:14px;text-align:left}
+.shift-card.old{background:var(--bg2);border:1px solid var(--border)}
+.shift-card.new{background:linear-gradient(135deg,rgba(110,92,255,.08),rgba(0,212,161,.05));border:1px solid rgba(110,92,255,.15)}
+.shift-card .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.shift-card h3{font-family:'Newsreader',serif;font-size:20px;margin-bottom:8px}
+.shift-card .flow{font-size:14px;color:var(--dim);margin-bottom:12px;font-family:'Instrument Sans',sans-serif}
+.shift-card p{font-size:14px;line-height:1.6;color:var(--dim);margin-bottom:0}
+
+/* SOCIAL PROOF / QUOTE */
+.proof{padding:80px 0;border-top:1px solid var(--border);text-align:center}
+.proof blockquote{font-family:'Newsreader',serif;font-size:28px;font-weight:300;font-style:italic;line-height:1.4;color:var(--text);max-width:600px;margin:0 auto 12px}
+.proof .attr{font-size:14px;color:var(--dim)}
+
+/* BOTTOM CTA */
+.bottom-cta{padding:120px 0;text-align:center;position:relative;border-top:1px solid var(--border)}
+.bottom-cta::before{content:'';position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(0,212,161,.06) 0%,transparent 70%);pointer-events:none}
+.bottom-cta h2{font-family:'Newsreader',serif;font-size:48px;font-weight:300;letter-spacing:-1.5px;margin-bottom:16px}
+.bottom-cta p{font-size:18px;color:var(--dim);margin-bottom:40px}
+
+/* FOOTER */
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
+footer p{font-size:13px;color:var(--dim)}
+footer a{color:var(--dim)}
+footer a:hover{color:var(--text)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{animation:fadeUp .7s ease forwards}
+.hero .sub{animation:fadeUp .7s .15s ease forwards;opacity:0}
+.cta-group{animation:fadeUp .7s .3s ease forwards;opacity:0}
+.pills{animation:fadeUp .7s .45s ease forwards;opacity:0}
+.reveal{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.22,1,.36,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+nav{padding:14px 20px}
+.hero{padding:140px 0 80px}
+.hero h1{font-size:42px}
+.feature-grid,.shift-compare{grid-template-columns:1fr}
+.features h2,.shift h2,.bottom-cta h2{font-size:32px}
+.proof blockquote{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">Nexa</div>
+<a href="/vision" class="link">Read the vision →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<h1>Your life, <span class="accent">handled.</span></h1>
+<p class="sub">Nexa is a personal AI agent that handles your email, calendar, calls, and meetings — so you can focus on what actually matters. No prompting. It just works.</p>
+<div class="cta-group">
+<a href="#early-access" class="btn btn-primary">Get Early Access</a>
+<a href="/vision" class="btn btn-ghost">Read the Vision</a>
+</div>
+<div class="pills">
+<span class="pill"><span class="dot" style="background:var(--green)"></span>Email</span>
+<span class="pill"><span class="dot" style="background:#0984e3"></span>iMessage</span>
+<span class="pill"><span class="dot" style="background:#fdcb6e"></span>Voice Calls</span>
+<span class="pill"><span class="dot" style="background:var(--accent2)"></span>Calendar</span>
+<span class="pill"><span class="dot" style="background:#ff6b6b"></span>Meetings</span>
+</div>
+</div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+<div class="container">
+<p class="label reveal">What Nexa Does</p>
+<h2 class="reveal">One agent. Every channel.<br>One memory that <span style="color:var(--accent2)">compounds.</span></h2>
+</div>
+<div class="container">
+<div class="feature-grid">
+<div class="feature reveal">
+<div class="icon">🧠</div>
+<h3>Morning Brief</h3>
+<p>Every day at 7am: what matters, what's been handled, what needs you. Your entire day in one message.</p>
+</div>
+<div class="feature reveal">
+<div class="icon">✉️</div>
+<h3>Email on Autopilot</h3>
+<p>Nexa reads your inbox, auto-replies when confident, holds drafts when not. Sensitive emails never touch AI.</p>
+</div>
+<div class="feature reveal">
+<div class="icon">📞</div>
+<h3>Answers Your Phone</h3>
+<p>Known contacts get the full assistant. Unknown callers get voicemail. You get a transcript and summary.</p>
+</div>
+<div class="feature reveal">
+<div class="icon">🎙️</div>
+<h3>Joins Your Meetings</h3>
+<p>Takes notes, captures action items, and sends follow-ups. You never write a meeting summary again.</p>
+</div>
+<div class="feature reveal">
+<div class="icon">🔍</div>
+<h3>Deep Research</h3>
+<p>Ask Nexa to research any topic. It delivers a structured report to your email, Google Docs, or Notion.</p>
+</div>
+<div class="feature reveal">
+<div class="icon">✈️</div>
+<h3>Flight Intelligence</h3>
+<p>Detects bookings from email. Tracks delays and gate changes. Alerts you before you even check.</p>
+</div>
+<div class="feature reveal">
+<div class="icon">🧭</div>
+<h3>Life Navigator</h3>
+<p>GPS for your day. Nexa surfaces the 3–4 things that need your attention. Everything else is handled.</p>
+</div>
+<div class="feature reveal">
+<div class="icon">🔒</div>
+<h3>Privacy First</h3>
+<p>200+ sensitive patterns classified before any AI processes them. Bank, medical, legal — never leave your infrastructure.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- THE SHIFT -->
+<section class="shift">
+<div class="container">
+<p class="label reveal" style="text-align:center">The Difference</p>
+<h2 class="reveal">Most AI tools added a step.<br><span style="color:var(--accent2)">Nexa removes you from the loop.</span></h2>
+<div class="shift-compare">
+<div class="shift-card old reveal">
+<p class="tag" style="color:#ff6b6b">Every other AI tool</p>
+<h3 style="color:var(--text)">Human prompts AI</h3>
+<p class="flow">SaaS → Human → AI → Human → Execute</p>
+<p>You prompt. AI generates. You copy, paste, edit, send. A smarter typewriter.</p>
+</div>
+<div class="shift-card new reveal">
+<p class="tag" style="color:var(--green)">Nexa</p>
+<h3 style="color:var(--text)">AI acts on your behalf</h3>
+<p class="flow" style="color:var(--green)">Intent → Nexa → Done</p>
+<p style="color:var(--text)">Nexa reads, decides, and executes. You see the results in your morning brief.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- QUOTE -->
+<section class="proof">
+<div class="container reveal">
+<blockquote>"The AI revolution is happening — but it doesn't seem interested in carrying everyone along."</blockquote>
+<p class="attr">— from <a href="/vision">the Nexa product vision</a></p>
+</div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta" id="early-access">
+<div class="container">
+<h2 class="reveal"><span style="color:var(--accent2)">Nexa</span> is in private beta.</h2>
+<p class="reveal">Free early access for a limited group of testers. Connect your email and Nexa starts working in minutes.</p>
+<div class="reveal">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScHITTiQAY8DGb_dn9jK3y388FjfO0owrnKN_RVipdfTfSWBA/viewform" class="btn btn-primary" style="font-size:18px;padding:16px 40px">Get Early Access →</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<p style="margin-bottom:8px"><a href="/vision">Vision</a> &nbsp;&middot;&nbsp; <a href="mailto:tayo@irokolabs.ai">Contact</a></p>
+<p>Iroko Labs &middot; Built by Tayo Olukoya</p>
+</div>
+</footer>
+
+<script>
+const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
+</script>
+</body>
+</html>
