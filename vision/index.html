@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Atọ́nà — Product Vision</title>
+<meta name="description" content="The AI revolution is here — but not everyone is invited. Atọ́nà is building the future where AI acts on your behalf.">
+<meta property="og:title" content="Atọ́nà — Product Vision">
+<meta property="og:description" content="The AI revolution is here — but not everyone is invited. This is the vision for an AI agent that represents you.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://irokolabs.ai/vision">
+<meta property="og:image" content="https://irokolabs.ai/vision/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atọ́nà — Product Vision">
+<meta name="twitter:description" content="The AI revolution is here — but not everyone is invited. This is the vision for an AI agent that represents you.">
+<meta name="twitter:image" content="https://irokolabs.ai/vision/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300;1,6..72,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -112,9 +122,23 @@ em{font-style:italic}
 @media(max-width:768px){
 h1{font-size:36px}h2{font-size:28px}
 .stat-row,.compare,.feature-grid{grid-template-columns:1fr}
-.agent-row{grid-template-columns:60px 1fr 1fr}
+.agent-compare{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.agent-row{grid-template-columns:1fr;gap:0}
+.agent-row.header{display:none}
+.agent-row div{padding:12px 20px}
+.agent-row div:first-child{font-size:13px;font-weight:700;letter-spacing:2px;padding-bottom:4px;color:var(--accent)}
+.agent-row div:nth-child(2){padding-top:0;padding-bottom:4px;font-size:14px}
+.agent-row div:nth-child(2)::before{content:"A Tool: ";font-weight:600;color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:2px}
+.agent-row div:nth-child(3){padding-top:0;font-size:14px}
+.agent-row div:nth-child(3)::before{content:"Atọ́nà: ";font-weight:600;color:var(--green);font-size:11px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:2px}
+.agent-row{border-bottom:1px solid rgba(0,0,0,.08);padding:8px 0}
+.flow{gap:4px}
+.flow-node{padding:8px 12px;font-size:12px}
+.flow-arrow{padding:0 4px;font-size:14px}
 section{padding:60px 0}
 .top-nav{padding:14px 20px}
+.quote p{font-size:22px}
+.closing h1{font-size:48px}
 }
 </style>
 </head>
