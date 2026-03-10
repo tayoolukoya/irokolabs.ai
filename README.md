@@ -16,14 +16,26 @@ Our belief is simple: the technologies that truly change the world don't ask peo
 
 ## Our First Product
 
-**[Nexa](https://irokolabs.ai)** — a personal AI agent that lives on your phone, remembers everything you've said and emailed, and handles your tasks so you don't have to. No prompting. No workflow setup. Just delegation.
+**[Atọ́nà](https://atona.ai)** — a personal AI agent that lives on your phone, remembers everything you've said and emailed, and handles your tasks so you don't have to. No prompting. No workflow setup. Just delegation.
+
+### The Name
+
+**Atọ́nà** carries meaning across two cultures:
+
+- **Yoruba** — *"The one who shows the way."* An AI agent that guides you through your day — not another tool you have to learn.
+- **Japanese (吾汝)** — *"Me and you."* A deep personal connection — an assistant that knows you, acts for you, and grows with you.
+
+Named by Iroko Labs, rooted in the cultures that inspire us.
 
 ## Structure
 
 ```
 index.html          Landing page
 vision/index.html   Product vision essay
+privacy/index.html  Privacy policy
 og-image.png        Social share preview image
+og-image.svg        Editable version
+README.md           This file
 ```
 
 ## Deployment
