@@ -1,0 +1,44 @@
+<svg width="180" height="52" viewBox="0 0 180 52" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=DM+Sans:wght@500&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Ring base -->
+  <circle cx="26" cy="26" r="21" fill="none" stroke="#e8e2d8" stroke-width="1.2"/>
+  <!-- Ring gold arc (top half) -->
+  <circle cx="26" cy="26" r="21" fill="none" stroke="#c9a84c" stroke-width="1.2"
+    stroke-dasharray="65.97 65.97" stroke-dashoffset="32.98"
+    transform="rotate(-90 26 26)"/>
+
+  <!-- Trunk -->
+  <rect x="24.4" y="28" width="3" height="12" rx="1.5" fill="#0f0d0a"/>
+
+  <!-- Left branch -->
+  <path d="M26 30 Q19 25 18 16" stroke="#c9a84c" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Centre branch -->
+  <path d="M26 30 Q26 21 26 13" stroke="#0f0d0a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <!-- Right branch -->
+  <path d="M26 30 Q33 25 34 16" stroke="#c9a84c" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Canopy nodes -->
+  <circle cx="18" cy="14" r="2.5" fill="#c9a84c"/>
+  <circle cx="26" cy="11" r="3.5" fill="#0f0d0a"/>
+  <circle cx="34" cy="14" r="2.5" fill="#c9a84c"/>
+
+  <!-- Wordmark -->
+  <text x="60" y="22"
+    font-family="'Cormorant Garamond', Georgia, serif"
+    font-size="20" font-weight="500"
+    fill="#0f0d0a" letter-spacing="0.02em">Iroko</text>
+
+  <!-- Gold rule -->
+  <rect x="60" y="30" width="18" height="0.8" fill="#c9a84c" opacity="0.8"/>
+
+  <!-- Sub -->
+  <text x="60" y="41"
+    font-family="'DM Sans', sans-serif"
+    font-size="8.5" font-weight="500"
+    fill="#7a7168" letter-spacing="0.20em">LABS</text>
+</svg>
