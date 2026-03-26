@@ -1,0 +1,54 @@
+<svg width="300" height="90" viewBox="0 0 300 90" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=DM+Sans:wght@500&amp;display=swap');
+    </style>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background (remove if embedding in dark page) -->
+  <rect width="300" height="90" fill="#0f0d0a" rx="12"/>
+
+  <!-- Glow -->
+  <circle cx="45" cy="45" r="38" fill="url(#glow)"/>
+
+  <!-- Ring base (dark arc) -->
+  <circle cx="45" cy="45" r="33" fill="none" stroke="#2a2520" stroke-width="1.5"/>
+  <!-- Ring gold arc (top half) -->
+  <circle cx="45" cy="45" r="33" fill="none" stroke="#c9a84c" stroke-width="1.5"
+    stroke-dasharray="103.67 103.67" stroke-dashoffset="51.84"
+    transform="rotate(-90 45 45)"/>
+
+  <!-- Trunk -->
+  <rect x="43.2" y="46" width="3.6" height="20" rx="1.8" fill="#f5f2ec"/>
+
+  <!-- Left branch -->
+  <path d="M45 48 Q35 40 33 28" stroke="#c9a84c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <!-- Centre branch -->
+  <path d="M45 48 Q45 36 45 24" stroke="#f5f2ec" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  <!-- Right branch -->
+  <path d="M45 48 Q55 40 57 28" stroke="#c9a84c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+  <!-- Canopy nodes -->
+  <circle cx="33" cy="26" r="3.5" fill="#c9a84c"/>
+  <circle cx="45" cy="22" r="5"   fill="#f5f2ec"/>
+  <circle cx="57" cy="26" r="3.5" fill="#c9a84c"/>
+
+  <!-- Wordmark -->
+  <text x="100" y="40"
+    font-family="'Cormorant Garamond', Georgia, serif"
+    font-size="32" font-weight="500"
+    fill="#f5f2ec" letter-spacing="0.02em">Iroko</text>
+
+  <!-- Gold rule -->
+  <rect x="100" y="52" width="28" height="1" rx="0.5" fill="#c9a84c" opacity="0.8"/>
+
+  <!-- Sub -->
+  <text x="100" y="66"
+    font-family="'DM Sans', sans-serif"
+    font-size="10" font-weight="500"
+    fill="#7a7168" letter-spacing="0.22em">LABS</text>
+</svg>
